@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: acfa93897395a184f808da6fc249aeb8
+guid: dadb07750e8576b4496b1576682cf12c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -52,6 +52,7 @@ ModelImporter:
     4300000: top1
     4300002: bottom
     4300004: pCylinder1
+    7400000: Take 001
     9500000: //RootNode
     13700000: pCylinder1
   externalObjects:
@@ -59,7 +60,7 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: gradient-violet-glowing-particles-background_23-2148338416
-    second: {fileID: 2800000, guid: 466682b9b6c42ec4081ade22bd8e11f7, type: 3}
+    second: {fileID: 2800000, guid: 69a6d82f201e98349a6c0dc50600c354, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
