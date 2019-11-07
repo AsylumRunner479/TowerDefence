@@ -1740,7 +1740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: {fileID: 34698102}
-  slider: {fileID: 0}
   healthCanvas: {fileID: 2040223759}
   healthBar: {fileID: 1532385550}
   self: {fileID: 62902510}

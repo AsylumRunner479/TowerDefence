@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHandler : MonoBehaviour
 {
@@ -38,12 +39,15 @@ public class PlayerHandler : MonoBehaviour
            
 
         }
-        else if (Input.GetKeyDown(KeyCode.R))
+        if (!Input.GetKeyDown(KeyCode.R))
         {
-            curHealth = maxHealth;
-            death.SetActive(false);
-            
         }
+        else
+        {
+            Scene activeScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(activeScene.buildIndex);
+        }
+
         if (healthBar.fillAmount < 1 && healthBar.fillAmount > 0)
         {
 
