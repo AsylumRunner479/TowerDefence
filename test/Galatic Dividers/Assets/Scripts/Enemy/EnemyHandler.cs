@@ -15,7 +15,7 @@ public class EnemyHandler : MonoBehaviour
     public float attackRange;
     //desiginates who the player is
     public Transform target;
-
+    
     public NavMeshAgent agent;
     //public Animator anim;
     //gives distances for how far away the player will be when they switch behaviour
@@ -44,7 +44,9 @@ public class EnemyHandler : MonoBehaviour
         //kills the enemy when they lose all their health
         if (curHealth <= 0)
         {
-           // anim.SetTrigger("Die");
+            Shop.money += Loot;
+            Destroy(self);
+            // anim.SetTrigger("Die");
         }
         //moves the enemy when the player is alive
         if (PlayerHandler.isDead == false)
@@ -54,6 +56,7 @@ public class EnemyHandler : MonoBehaviour
             if (curHealth == 0)
             {
                 Destroy(self);
+
                 return;
             }
             //attacks the player if they get too close
@@ -83,6 +86,12 @@ public class EnemyHandler : MonoBehaviour
 
            
         }
+    }
+    void Fire()
+    {
+        curHealth -= damage;
+
+
     }
     /*/private void LateUpdate()
     {

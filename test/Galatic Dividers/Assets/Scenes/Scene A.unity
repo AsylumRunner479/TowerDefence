@@ -46055,3 +46055,48 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa86ff784924ed64e9b02441297bd3a3, type: 3}
+--- !u!1 &5353867552397590362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5353867552372250445, guid: aa86ff784924ed64e9b02441297bd3a3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5353867552397590361}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5353867552397590363
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353867552397590362}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5353867552397590364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353867552397590362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61637856f9d3bf45ba03dc2feccebc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  anim: {fileID: 5353867552397590363}
+  dist: 5
+  fireRate: 2
+  timeTillNextFire: 2
+  damage: 2
+  range: 2
+  turnSpeed: 2
