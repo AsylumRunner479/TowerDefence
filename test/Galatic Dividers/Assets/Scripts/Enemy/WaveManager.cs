@@ -49,6 +49,8 @@ public class WaveManager : MonoBehaviour
         {
             if (enemySpawnCount< maxEnemies)
             {
+                Invoke("AddRandom", 0.2f);
+                Invoke("AddRandom", 0.82f);
                 Invoke("AddRandom", 2f);
                 spawnTimer = 2;
                 canSpawn = true;
