@@ -20,6 +20,7 @@ public class TowerHandler : MonoBehaviour
        // target = GameObject.FindGameObjectsWithTag("Enemy").Transform;
         
         anim = GetComponent<Animator>();
+       
     }
     void Update()
     {  
