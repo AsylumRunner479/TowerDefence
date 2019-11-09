@@ -105,11 +105,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
-    - target: {fileID: 5353867552372250445, guid: aa86ff784924ed64e9b02441297bd3a3,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 5353867552372250444, guid: aa86ff784924ed64e9b02441297bd3a3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -165,20 +160,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5353867552372250444, guid: aa86ff784924ed64e9b02441297bd3a3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1765004
+    - target: {fileID: 646173941, guid: aa86ff784924ed64e9b02441297bd3a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.614
       objectReference: {fileID: 0}
-    - target: {fileID: 5353867552372250444, guid: aa86ff784924ed64e9b02441297bd3a3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.1765004
+    - target: {fileID: 646173941, guid: aa86ff784924ed64e9b02441297bd3a3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.185
       objectReference: {fileID: 0}
-    - target: {fileID: 646173940, guid: aa86ff784924ed64e9b02441297bd3a3, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
+    - target: {fileID: 646173943, guid: aa86ff784924ed64e9b02441297bd3a3, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63a96e5aa526784428f19dedf21397f7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa86ff784924ed64e9b02441297bd3a3, type: 3}
 --- !u!4 &6794499974490744972 stripped
