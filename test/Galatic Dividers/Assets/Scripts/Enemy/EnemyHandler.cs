@@ -28,6 +28,7 @@ public class EnemyHandler : MonoBehaviour
     //public float angle;
     //public EnemyAI myAI;
     public Animator anim;
+    public Shop shop;
     //public float curHealth, maxHealth;
     void Start()
     {
@@ -48,7 +49,8 @@ public class EnemyHandler : MonoBehaviour
             
             Destroy(self);
             // anim.SetTrigger("Die");
-            wave.enemiesKilled += 1;
+            
+
         }
         //moves the enemy when the player is alive
         if (PlayerHandler.isDead == false)

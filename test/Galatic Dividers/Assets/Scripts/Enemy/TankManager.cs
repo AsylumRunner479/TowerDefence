@@ -4,26 +4,25 @@ using UnityEngine;
 using System.Linq;
 using System;
 
-public class WaveManager : MonoBehaviour
+public class TankManager : MonoBehaviour
 {
-    public float waveNumber, spawnTimer, enemySpawnCount;
+    public static float waveNumber, spawnTimer, enemySpawnCount;
     public float enemiesKilled;
     public float maxEnemies, enemyCap;
     public GameObject spawnPoint;
-    public string waveText;
-    public string enemyText;
+    
     public GameObject[] spawnObject;
     public float radius = 1.0f;
     public float minSpawnTime = 1.0f;
     public float maxSpawnTime = 10.0f;
     public bool canSpawn;
-    public GameObject space;
+    
 
     // Start is called before the first frame update
     
     void Start()
     {
-        waveNumber = 1;
+        waveNumber = 0;
         enemiesKilled = 5;
         maxEnemies = 10;
         spawnTimer = 10;
@@ -39,11 +38,11 @@ public class WaveManager : MonoBehaviour
         {
             if(!canSpawn)
             canSpawn = true;
-            space.SetActive(false);
+            
         }
         if (spawnTimer >= 0)
         {
-            spawnTimer -= 10*Time.deltaTime;
+            spawnTimer -= Time.deltaTime;
         }
         if (spawnTimer < 0 && canSpawn && !PlayerHandler.isDead)
         {
@@ -67,15 +66,14 @@ public class WaveManager : MonoBehaviour
             if(enemySpawnCount >= maxEnemies)
             {
                 
-                waveNumber++;
+               
                 if (waveNumber == 10)
                 {
                     waveNumber = 0;
-                    TankManager.waveNumber++;
                 }
                 maxEnemies = (waveNumber) * 10;
                 enemySpawnCount = 0;
-                space.SetActive(true);
+                
                 spawnTimer = 10 - waveNumber;
             }
         }

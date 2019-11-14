@@ -17,7 +17,7 @@ public class PlayerHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 1000f;
+        maxHealth = 10000f;
         curHealth = maxHealth;
         //healthCanvas = GameObject.FindGameObjectWithTag(healthCanvas);
         healthBar = GameObject.FindGameObjectWithTag("healthBar").GetComponent<Image>();
