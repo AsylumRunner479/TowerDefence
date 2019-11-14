@@ -7,7 +7,7 @@ using System;
 public class WaveManager : MonoBehaviour
 {
     public float waveNumber, spawnTimer, enemySpawnCount;
-    public static float enemiesKilled;
+    public float enemiesKilled;
     public float maxEnemies, enemyCap;
     public GameObject spawnPoint;
     public string waveText;
@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         waveNumber = 0;
-        enemiesKilled = 0;
+        enemiesKilled = 5;
         maxEnemies = 100;
         spawnTimer = 2;
         enemyCap = 100;
@@ -47,7 +47,7 @@ public class WaveManager : MonoBehaviour
         }
         if (spawnTimer < 0 && canSpawn && !PlayerHandler.isDead)
         {
-            if (enemySpawnCount< maxEnemies)
+            if (enemiesKilled < maxEnemies)
             {
                 Invoke("AddRandom", 0.2f);
                 Invoke("AddRandom", 0.82f);
@@ -62,7 +62,7 @@ public class WaveManager : MonoBehaviour
         }
         if (!canSpawn)
         {
-            if(enemiesKilled == enemyCap)
+            if(enemiesKilled != maxEnemies)
             {
                 canSpawn = true;
                 waveNumber++;
