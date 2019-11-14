@@ -7,6 +7,7 @@ using System;
 public class WaveManager : MonoBehaviour
 {
     public float waveNumber, spawnTimer, enemySpawnCount;
+    public float frequency, magnitude;
     public float enemiesKilled;
     public float maxEnemies, enemyCap;
     public GameObject spawnPoint;
@@ -29,6 +30,8 @@ public class WaveManager : MonoBehaviour
         spawnTimer = 10;
         enemyCap = 100;
         enemySpawnCount = 0;
+        frequency = 1;
+        magnitude = 1;
     }
 
     
@@ -49,12 +52,15 @@ public class WaveManager : MonoBehaviour
         {
             if (enemySpawnCount < maxEnemies)
             {
-                
+                for (int i = 0; i < magnitude; i++)
+                {
                     Invoke("AddRandom", 0.5f);
+                }
+                    
                     
                 
                 
-                spawnTimer = 10 - waveNumber;
+                spawnTimer = 11 - frequency;
                 canSpawn = true;
             }
             else
@@ -68,15 +74,17 @@ public class WaveManager : MonoBehaviour
             {
                 
                 waveNumber++;
-                if (waveNumber == 10)
+                frequency++;
+                if (frequency == 10)
                 {
-                    waveNumber = 0;
+                    magnitude++;
+                    frequency = 0;
                     TankManager.waveNumber++;
                 }
-                maxEnemies = (waveNumber) * 10;
+                maxEnemies = (frequency) * 10;
                 enemySpawnCount = 0;
                 space.SetActive(true);
-                spawnTimer = 10 - waveNumber;
+                spawnTimer = 10 - frequency;
             }
         }
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7473,7 +7473,8 @@ MonoBehaviour:
   minSpawnTime: 1
   maxSpawnTime: 10
   canSpawn: 0
-  Enemy: []
+  Enemy:
+  - {fileID: 1073997114}
   spawnPos: {fileID: 55541293}
 --- !u!4 &324867147
 Transform:
@@ -22911,6 +22912,12 @@ Transform:
   m_Father: {fileID: 620007495}
   m_RootOrder: 92
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1073997114 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3896549827206799394, guid: 726b7afccfca33043acc5801dceedaa1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1782741772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1074191633
 GameObject:
   m_ObjectHideFlags: 0
@@ -31076,6 +31083,8 @@ MonoBehaviour:
   waveNumber: 0
   spawnTimer: 0
   enemySpawnCount: 0
+  frequency: 0
+  magnitude: 0
   enemiesKilled: 0
   maxEnemies: 0
   enemyCap: 0
@@ -37291,26 +37300,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3896549827206799398, guid: 726b7afccfca33043acc5801dceedaa1,
+    - target: {fileID: 3896549827206799403, guid: 726b7afccfca33043acc5801dceedaa1,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3896549827206799398, guid: 726b7afccfca33043acc5801dceedaa1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3896549827206799398, guid: 726b7afccfca33043acc5801dceedaa1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3896549827206799392, guid: 726b7afccfca33043acc5801dceedaa1,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: spawnPoint
       value: 
-      objectReference: {fileID: 2100000, guid: 070f600bb9c741b4ea0ce1315958d9d1, type: 2}
+      objectReference: {fileID: 55541293}
     - target: {fileID: 3896549827206799403, guid: 726b7afccfca33043acc5801dceedaa1,
         type: 3}
       propertyPath: target
@@ -37321,21 +37315,6 @@ PrefabInstance:
       propertyPath: shop
       value: 
       objectReference: {fileID: 421032044}
-    - target: {fileID: 3896549827206799403, guid: 726b7afccfca33043acc5801dceedaa1,
-        type: 3}
-      propertyPath: spawnPoint
-      value: 
-      objectReference: {fileID: 55541293}
-    - target: {fileID: 3896549827206799403, guid: 726b7afccfca33043acc5801dceedaa1,
-        type: 3}
-      propertyPath: Loot
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 3896549827206799403, guid: 726b7afccfca33043acc5801dceedaa1,
-        type: 3}
-      propertyPath: curHealth
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 726b7afccfca33043acc5801dceedaa1, type: 3}
 --- !u!1 &1785261923

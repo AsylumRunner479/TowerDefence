@@ -10,7 +10,7 @@ public class TankManager : MonoBehaviour
     public float enemiesKilled;
     public float maxEnemies, enemyCap;
     public GameObject spawnPoint;
-    
+    public float frequency, magnitude;
     public GameObject[] spawnObject;
     public float radius = 1.0f;
     public float minSpawnTime = 1.0f;
@@ -48,12 +48,12 @@ public class TankManager : MonoBehaviour
         {
             if (enemySpawnCount < maxEnemies)
             {
-                
+                for (int i = 0; i < magnitude; i++)
+                {
                     Invoke("AddRandom", 0.5f);
-                    
-                
-                
-                spawnTimer = 10 - waveNumber;
+                }
+
+                spawnTimer = 11 - frequency;
                 canSpawn = true;
             }
             else
@@ -65,25 +65,29 @@ public class TankManager : MonoBehaviour
         {
             if(enemySpawnCount >= maxEnemies)
             {
-                
-               
-                if (waveNumber == 10)
+
+
+                frequency++;
+                if (frequency == 10)
                 {
-                    waveNumber = 0;
+                    magnitude++;
+                    frequency = 0;
+                    
                 }
-                maxEnemies = (waveNumber) * 10;
+                maxEnemies = (frequency) * 10;
                 enemySpawnCount = 0;
                 
                 spawnTimer = 10 - waveNumber;
             }
         }
     }
+    /*/
     void EnemyType ()
     {
 
     }
     // Update is called once per frame
-    public GameObject[] Enemy;
+    
     public Transform spawnPos;
     void SpawnEnemy()
     {
@@ -99,7 +103,8 @@ public class TankManager : MonoBehaviour
             Invoke("SpawnEnemy", UnityEngine.Random.Range(minSpawnTime, maxSpawnTime));
         }
     }
-
+    /*/
+    public GameObject[] Enemy;
 
     void AddRandom()
     {

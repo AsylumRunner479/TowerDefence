@@ -25,7 +25,7 @@ public class Shop : MonoBehaviour
         scr = new Vector2(Screen.width / 16, Screen.height / 9);
         GUI.Button(new Rect(scr.x * 14.25f, scr.y * 0.5f, scr.x * 2, scr.y * 0.5f), "Money: " + money);
         GUI.Button(new Rect(scr.x * 1f, scr.y * 0.5f, scr.x * 2, scr.y * 0.5f), wave.enemySpawnCount + "/" + wave.maxEnemies);
-        GUI.Button(new Rect(scr.x * 1f, scr.y * 1f, scr.x * 2, scr.y * 0.5f), "wave: " + TankManager.waveNumber + wave.waveNumber);
+        GUI.Button(new Rect(scr.x * 1f, scr.y * 1f, scr.x * 2, scr.y * 0.5f), "wave: " + wave.waveNumber);
         //DisplayCustom();
         //DisplayStats();
     }

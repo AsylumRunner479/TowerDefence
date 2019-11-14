@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3896549827206799396}
   - component: {fileID: 3896549827206799397}
   m_Layer: 9
-  m_Name: Enemy
+  m_Name: Tank
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 3896549827206799394}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 213.1, y: -0, z: 238}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7f5851e1f0d8e7847914cc6e561ff93e, type: 2}
+  - {fileID: 2100000, guid: 070f600bb9c741b4ea0ce1315958d9d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,10 +94,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  curHealth: 5
+  curHealth: 300
   damage: 5
   spawnPoint: {fileID: 0}
-  Loot: 5
+  Loot: 50
   attackRange: 3
   target: {fileID: 0}
   wave: {fileID: 0}
