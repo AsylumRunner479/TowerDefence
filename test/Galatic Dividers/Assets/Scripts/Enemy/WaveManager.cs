@@ -115,7 +115,7 @@ public class WaveManager : MonoBehaviour
     {
         int randomIndex = UnityEngine.Random.Range(0, Enemy.Length);
         GameObject objectToCreate = Enemy[randomIndex];
-        Instantiate(objectToCreate);
+        Instantiate(objectToCreate, spawnPoint.transform.position,Quaternion.identity);
 
         enemySpawnCount++;
 

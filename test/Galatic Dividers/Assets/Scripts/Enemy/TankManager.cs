@@ -16,22 +16,15 @@ public class TankManager : MonoBehaviour
     public float minSpawnTime = 1.0f;
     public float maxSpawnTime = 10.0f;
     public bool canSpawn;
-    
-
-    // Start is called before the first frame update
-    
     void Start()
     {
-        waveNumber = 0;
+        waveNumber = 1;
         enemiesKilled = 5;
         maxEnemies = 10;
         spawnTimer = 10;
         enemyCap = 100;
         enemySpawnCount = 0;
     }
-
-    
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -74,7 +67,7 @@ public class TankManager : MonoBehaviour
                     frequency = 0;
                     
                 }
-                maxEnemies = (frequency) * 10;
+                maxEnemies = (frequency);
                 enemySpawnCount = 0;
                 
                 spawnTimer = 10 - waveNumber;
@@ -110,7 +103,7 @@ public class TankManager : MonoBehaviour
     {
         int randomIndex = UnityEngine.Random.Range(0, Enemy.Length);
         GameObject objectToCreate = Enemy[randomIndex];
-        Instantiate(objectToCreate);
+        Instantiate(objectToCreate, spawnPoint.transform.position, Quaternion.identity);
 
         enemySpawnCount++;
 
