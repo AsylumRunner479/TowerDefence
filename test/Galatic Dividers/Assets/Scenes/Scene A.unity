@@ -7475,8 +7475,8 @@ MonoBehaviour:
   maxEnemies: 0
   enemyCap: 0
   spawnPoint: {fileID: 55541292}
-  frequency: 0
-  magnitude: 0
+  frequency: 10
+  magnitude: 2
   spawnObject: []
   radius: 1
   minSpawnTime: 1
