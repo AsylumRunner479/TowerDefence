@@ -13,7 +13,7 @@ public class LinearInventory : MonoBehaviour
     public Item selectedItem;
     public static int money;
     public Vector2 scrollPos;
-    
+
     public Transform dropLocation;
     [System.Serializable]
     public struct EquippedItems
@@ -36,67 +36,68 @@ public class LinearInventory : MonoBehaviour
         Time.timeScale = 1;
         selectedItem = null;
     }
+
     private void Update()
     {
         // makes the inventory open and close based on whther you press tab.
-        
-           
-                
 
-        
+
+
+
+
         if (Input.GetKey(KeyCode.I))
         {
             inv.Add(ItemData.CreateItem(Random.Range(0, 3)));
         }
         if (Input.GetKey(KeyCode.KeypadPlus))
         {
-            
+
         }
     }
     void DisplayInv()
     {
-        
-        
-            if (inv.Count <= 34)
-            {
-                for (int i = 0; i < inv.Count; i++)
-                {
-                    if (GUI.Button(new Rect(0.5f * scr.x, 0.25f * scr.y + i * (0.25f * scr.y), 3 * scr.x, 0.25f * scr.y), inv[i].Name))
-                    {
-                        selectedItem = inv[i];
-                    }
-                }
-            }
-            else// we have more items than screen space
-            {
-                //our move position of our scroll window
-                scrollPos =
-               //the Start of our scroll view
-               GUI.BeginScrollView(
-               //our position and size of our window
-               new Rect(0, 0.25f * scr.y, 3.75f * scr.x, 8.5f * scr.y),
-               //our current position in the scroll view
-               scrollPos,
-               //viewable area
-               new Rect(0, 0, 0, inv.Count * (0.25f * scr.y)),
-                //can we see our Horizontal bar?
-                false,
-               //Can we see our Vertical Bar?
-               true);
 
-                #region Scrollable Space
-                //displays all the invenory items in a list format
-                for (int i = 0; i < inv.Count; i++)
+
+        if (inv.Count <= 34)
+        {
+            for (int i = 0; i < inv.Count; i++)
+            {
+                if (GUI.Button(new Rect(0.5f * scr.x, 0.25f * scr.y + i * (0.25f * scr.y), 3 * scr.x, 0.25f * scr.y), inv[i].Name))
                 {
-                    if (GUI.Button(new Rect(0.5f * scr.x, i * (0.25f * scr.y), 3 * scr.x, 0.25f * scr.y), inv[i].Name))
-                    {
-                        selectedItem = inv[i];
-                    }
+                    selectedItem = inv[i];
                 }
-                #endregion
-                GUI.EndScrollView();
             }
-        
+        }
+        else// we have more items than screen space
+        {
+            //our move position of our scroll window
+            scrollPos =
+           //the Start of our scroll view
+           GUI.BeginScrollView(
+           //our position and size of our window
+           new Rect(0, 0.25f * scr.y, 3.75f * scr.x, 8.5f * scr.y),
+           //our current position in the scroll view
+           scrollPos,
+           //viewable area
+           new Rect(0, 0, 0, inv.Count * (0.25f * scr.y)),
+            //can we see our Horizontal bar?
+            false,
+           //Can we see our Vertical Bar?
+           true);
+
+            #region Scrollable Space
+            //displays all the invenory items in a list format
+            for (int i = 0; i < inv.Count; i++)
+            {
+                if (GUI.Button(new Rect(0.5f * scr.x, i * (0.25f * scr.y), 3 * scr.x, 0.25f * scr.y), inv[i].Name))
+                {
+                    selectedItem = inv[i];
+                }
+            }
+            #endregion
+            GUI.EndScrollView();
+        }
+
     }
     void OnGUI()
     {
@@ -106,10 +107,10 @@ public class LinearInventory : MonoBehaviour
             GUI.skin = invSkin;
 
             DisplayInv();
-            
-            
-                UseItem();
-            
+
+
+            UseItem();
+
 
         }
         void UseItem()
@@ -118,34 +119,14 @@ public class LinearInventory : MonoBehaviour
             GUI.Box(new Rect(4f * scr.x, 0.25f * scr.y, 3 * scr.x, 0.25f * scr.y), selectedItem.Name, titleStyle);
             GUI.skin = invSkin;
             GUI.Box(new Rect(4f * scr.x, 0.5f * scr.y, 3 * scr.x, 3 * scr.y), selectedItem.IconName);
-            GUI.Box(new Rect(4f * scr.x, 3.5f * scr.y, 3 * scr.x, 3 * scr.y), selectedItem.Description + "\nAmount: " +  "\nPrice: $" + selectedItem.Value);
-           
-                    //this allows to wear and take off your colothing from your inventory
-                    if (equippedItems[1].equippedItem == null || selectedItem.Name != equippedItems[1].equippedItem.name)
-                    {
-                        if (GUI.Button(new Rect(4 * scr.x, 6.5f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "Wear"))
-                        {
-                            if (equippedItems[1].equippedItem != null)
-                            {
-                                Destroy(equippedItems[1].equippedItem);
-                            }
-                            equippedItems[1].equippedItem = Instantiate(selectedItem.MeshName, equippedItems[1].location);
-                            equippedItems[1].equippedItem.name = selectedItem.Name;
-                        }
-                    }
-                    else
-                    {
-                        if (GUI.Button(new Rect(4 * scr.x, 7f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "strip"))
-                        {
-                            Destroy(equippedItems[1].equippedItem);
-                            equippedItems[1].equippedItem = null;
-                        }
-                    }
-                   
-            }
+            GUI.Box(new Rect(4f * scr.x, 3.5f * scr.y, 3 * scr.x, 3 * scr.y), selectedItem.Description + "\nAmount: " + "\nPrice: $" + selectedItem.Value);
+
+
+
+
 
             // this allows the player to throw away items they don't need or want
-            if (GUI.Button(new Rect(5.5f * scr.x, 6.5f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "Discard"))
+            if (GUI.Button(new Rect(5.5f * scr.x, 6.5f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "place"))
             {
                 //check if the item is equipped
                 for (int i = 0; i < equippedItems.Length; i++)
@@ -163,14 +144,15 @@ public class LinearInventory : MonoBehaviour
                 itemToDrop.name = selectedItem.Name;
                 itemToDrop.AddComponent<Rigidbody>().useGravity = true;
 
-                
-                    inv.Remove(selectedItem);
-                    selectedItem = null;
-                    return;
-                
+
+                inv.Remove(selectedItem);
+                selectedItem = null;
+                return;
+
 
             }
         }
     }
+}
 
 

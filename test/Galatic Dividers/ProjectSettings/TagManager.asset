@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - healthCanvas
   - healthBar
+  - TowerBase
   layers:
   - Default
   - TransparentFX
