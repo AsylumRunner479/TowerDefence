@@ -6226,6 +6226,8 @@ MonoBehaviour:
   scr: {x: 0, y: 0}
   wave: {fileID: 1533686444}
   tank: {fileID: 0}
+  showShop: 0
+  itemsToSpawn: 
 --- !u!1 &421175732
 GameObject:
   m_ObjectHideFlags: 0
@@ -24705,7 +24707,7 @@ PrefabInstance:
     - target: {fileID: 8843462919734005794, guid: b62c02b5aaa13704bbe2da7dbd5af029,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.242126
+      value: 7.2421265
       objectReference: {fileID: 0}
     - target: {fileID: 8843462919734005794, guid: b62c02b5aaa13704bbe2da7dbd5af029,
         type: 3}
@@ -24715,7 +24717,7 @@ PrefabInstance:
     - target: {fileID: 8843462919734005794, guid: b62c02b5aaa13704bbe2da7dbd5af029,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.944183
+      value: -17.944183
       objectReference: {fileID: 0}
     - target: {fileID: 8843462919734005794, guid: b62c02b5aaa13704bbe2da7dbd5af029,
         type: 3}
