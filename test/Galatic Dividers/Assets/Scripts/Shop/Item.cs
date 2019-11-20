@@ -10,17 +10,17 @@ public class Item
     private string _name;
     private string _description;
     //Amount of items of that type...Stackable
-    private int _amount;
+    
     //Buy and Sell Price
     private int _value;
-    public static bool Money;
+    
     private int _damage;
-    private int _armour;
-    private int _heal;
+    private int _range;
+    private int _fireRate;
     private Texture2D _iconName;
     private GameObject _meshName;
 
-    private ItemTypes _type;
+    
     #endregion
     #region Properities
     //gives a database of names
@@ -36,11 +36,7 @@ public class Item
         set { _meshName = value; }
     }
     //gives the item a category
-    public ItemTypes ItemType
-    {
-        get { return _type; }
-        set { _type = value; }
-    }
+    
     //allows us to include a description
     public string Description
     {
@@ -48,10 +44,10 @@ public class Item
         set { _description = value; }
     }
     //allows us to assign the level of protection
-    public int Armour
+    public int Range
     {
-        get { return _armour; }
-        set { _armour = value; }
+        get { return _range; }
+        set { _range = value; }
     }
     //allows us to show the offensive capabilities
     public int Damage
@@ -60,10 +56,10 @@ public class Item
         set { _damage = value; }
     }
     //allows us to assign the level of healing 
-    public int Heal
+    public int FireRate
     {
-        get { return _heal; }
-        set { _heal = value; }
+        get { return _fireRate; }
+        set { _fireRate = value; }
     }
     //allows us to see the price of something
     public int Value
@@ -71,13 +67,8 @@ public class Item
         get { return _value; }
         set { _value = value; }
     }
-    //how many of the object do you have in inventory
-    public int Amount
-    {
-        get { return _amount; }
-        set { _amount = value; }
-    }
-    //
+   
+   
     public string Name
     {
         get { return _name; }
@@ -97,16 +88,3 @@ public class Item
 
 }
 //lists out the various item types available
-public enum ItemTypes
-{
-    Armour,
-    Weapon,
-    Potion,
-    Money,
-    Quest,
-    Food,
-    Ingredient,
-    Craftable,
-    Misc,
-
-}
