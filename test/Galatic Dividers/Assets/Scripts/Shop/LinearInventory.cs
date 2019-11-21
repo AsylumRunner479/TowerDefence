@@ -13,7 +13,7 @@ public class LinearInventory : MonoBehaviour
     public Item selectedItem;
     public static int money;
     public Vector2 scrollPos;
-
+    public Interact interact;
     public Transform dropLocation;
     [System.Serializable]
     public struct EquippedItems
@@ -128,16 +128,8 @@ public class LinearInventory : MonoBehaviour
             // this allows the player to throw away items they don't need or want
             if (GUI.Button(new Rect(5.5f * scr.x, 6.5f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "place"))
             {
-                //check if the item is equipped
-                for (int i = 0; i < equippedItems.Length; i++)
-                {
-                    if (equippedItems[i].equippedItem != null && selectedItem.Name == equippedItems[i].equippedItem.name)
-                    {
-                        //if so destroy from scene
-                        Destroy(equippedItems[i].equippedItem);
-                    }
-                }
-
+                
+                Destroy(Interact.tower);
                 //spawn item at droplocation
                 GameObject itemToDrop = Instantiate(selectedItem.MeshName, dropLocation.position, Quaternion.identity);
                 //apply gravity and make sure its named correctly 

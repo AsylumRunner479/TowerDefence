@@ -4,6 +4,7 @@ using UnityEngine;
 public class Interact : MonoBehaviour
 {
     public LinearInventory inventory;
+    public static GameObject tower;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,10 @@ public class Interact : MonoBehaviour
                     
                     case "TowerBase":
                         Debug.Log("hit Tower");
-                        inventory.dropLocation.position = GameObject.FindGameObjectWithTag(TowerBase).position;
+                        inventory.dropLocation.position = tower.position;
+                        
+                        
+                            
                         break;
                    
 
