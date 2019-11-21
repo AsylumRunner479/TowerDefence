@@ -47,6 +47,7 @@ public class TowerHandler : MonoBehaviour
             }
        
         }
+        //make the rotation restricted based on target position
         if (target != null)
         {
             //   anim.SetBool("IsShooting", true);
