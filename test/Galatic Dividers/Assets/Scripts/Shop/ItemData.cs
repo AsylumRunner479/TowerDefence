@@ -32,9 +32,9 @@ public static class ItemData
 
                 //Buy and Sell Price
                 value = 100;
-                damage = 0;
-                range = 1;
-                fireRate = 0;
+                damage = 5;
+                range = 2;
+                fireRate = 1;
                 iconName = "Turret/Light";
                 meshName = "Turret/Light";
 
@@ -46,9 +46,9 @@ public static class ItemData
 
                 //Buy and Sell Price
                 value = 300;
-                damage = 0;
-                range = 2;
-                fireRate = 0;
+                damage = 10;
+                range = 10;
+                fireRate = 20;
                 iconName = "Turret/Med";
                 meshName = "Turret/Med";
 
