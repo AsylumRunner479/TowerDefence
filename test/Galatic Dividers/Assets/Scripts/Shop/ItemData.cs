@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class ItemData
 {
-    public static Item CreateItem(int itemId)
+    /*/public static Item CreateItem(int itemId)
     {
          
 
@@ -75,4 +75,5 @@ public static class ItemData
                 
         }
     }
+    /*/
 }

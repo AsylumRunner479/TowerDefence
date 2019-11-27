@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LinearInventory : MonoBehaviour
 {
+ 
     #region Variables
     public static List<Item> inv = new List<Item>();
     public static bool showInv;
@@ -47,7 +48,7 @@ public class LinearInventory : MonoBehaviour
 
         if (Input.GetKey(KeyCode.I))
         {
-            inv.Add(ItemData.CreateItem(Random.Range(0, 3)));
+           // inv.Add(ItemData.CreateItem(Random.Range(0, 3)));
         }
         if (Input.GetKey(KeyCode.KeypadPlus))
         {
@@ -145,6 +146,7 @@ public class LinearInventory : MonoBehaviour
             }
         }
     }
+   
 }
 
 

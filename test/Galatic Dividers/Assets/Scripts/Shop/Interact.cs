@@ -27,7 +27,7 @@ public class Interact : MonoBehaviour
                     
                     case "TowerBase":
                         Debug.Log("hit Tower");
-                        inventory.dropLocation.position = tower.transform.position;
+                       // inventory.dropLocation.position = tower.transform.position;
                         
                         
                             
