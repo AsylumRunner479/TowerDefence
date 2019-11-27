@@ -2847,6 +2847,7 @@ MonoBehaviour:
   - {fileID: 445598084488479706, guid: 74eac2fb3aebef8439fd5bf7009058fd, type: 3}
   holograms:
   - {fileID: 6794499974474125797, guid: 6425bde22b503af4787f5c9d080a7edb, type: 3}
+  towerPrice: 100
 --- !u!1 &154881029
 GameObject:
   m_ObjectHideFlags: 0

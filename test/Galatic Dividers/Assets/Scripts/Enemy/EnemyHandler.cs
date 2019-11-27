@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class EnemyHandler : MonoBehaviour
 {
+    public static float score;
+    public static float highScore;
     public float moveSpeed;
     public float curHealth;
     NavMeshAgent Agent;
@@ -40,13 +42,18 @@ public class EnemyHandler : MonoBehaviour
         spawnPoint = GameObject.FindGameObjectWithTag("Spawn").transform;
         agent.speed = moveSpeed;
     }
+
     void Update()
     {
+        if (score > highScore)
+        {
+            highScore = score;
+        }
         //kills the enemy when they lose all their health
         if (curHealth <= 0)
         {
             Shop.money += Loot;
-            
+            AddScore(Loot);
             Destroy(self);
             // anim.SetTrigger("Die");
             
@@ -92,6 +99,14 @@ public class EnemyHandler : MonoBehaviour
            
         }
     }
+    public void AddScore(float scoretoAdd)
+   {
+       // Increase Score Value by incoming score
+       score += scoretoAdd;
+       // Update UI Here
+       //UIManager.Instance.UpdateScore(score);
+   }
+   
     void Fire()
     {
         curHealth -= damage;

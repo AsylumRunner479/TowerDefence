@@ -9,7 +9,7 @@ public class TowerHandler : MonoBehaviour
 
     public Animator anim;
     public float dist, targetDist = 500;
-
+    public GameObject arclines;
 
     public float fireRate, timeTillNextFire, damage, range;
     public float turnSpeed;

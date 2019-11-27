@@ -7,6 +7,7 @@ using UnityEngine;
     {
         public GameObject[] towers;
         public GameObject[] holograms;
+    public float towerPrice;
         private int currentTower = 0;
 
         void Update()
@@ -41,7 +42,7 @@ using UnityEngine;
                         // Spot is no longer available
                         p.isAvailable = false;
 
-                    LinearInventory.money -= 100;
+                    Shop.money -= towerPrice;
                     }
                 }
             }

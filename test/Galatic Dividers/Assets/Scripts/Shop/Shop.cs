@@ -32,9 +32,11 @@ public class Shop : MonoBehaviour
     public void OnGUI()
     {
         scr = new Vector2(Screen.width / 16, Screen.height / 9);
-        GUI.Button(new Rect(scr.x * 14.25f, scr.y * 0.5f, scr.x * 2, scr.y * 0.5f), "Money: " + money);
-        GUI.Button(new Rect(scr.x * 1f, scr.y * 0.5f, scr.x * 2, scr.y * 0.5f), wave.enemySpawnCount + "/" + wave.maxEnemies);
-        GUI.Button(new Rect(scr.x * 1f, scr.y * 1f, scr.x * 2, scr.y * 0.5f), "wave: " + wave.waveNumber);
+        GUI.Box(new Rect(scr.x * 14.25f, scr.y * 0.5f, scr.x * 2, scr.y * 0.5f), "Money: " + money);
+        GUI.Box(new Rect(scr.x * 14.25f, scr.y * 1f, scr.x * 2, scr.y * 0.5f), "Score: " + EnemyHandler.score);
+        GUI.Box(new Rect(scr.x * 14.25f, scr.y * 1.5f, scr.x * 2, scr.y * 0.5f), "High Score: " + EnemyHandler.highScore);
+        GUI.Box(new Rect(scr.x * 1f, scr.y * 0.5f, scr.x * 2, scr.y * 0.5f), wave.enemySpawnCount + "/" + wave.maxEnemies);
+        GUI.Box(new Rect(scr.x * 1f, scr.y * 1f, scr.x * 2, scr.y * 0.5f), "wave: " + wave.waveNumber);
         //DisplayCustom();
         //DisplayStats();
         if (showShop)
