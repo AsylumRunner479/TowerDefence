@@ -81,18 +81,13 @@ public class EnemyHandler : MonoBehaviour
                 
             }
             //follows the player when they see him
-            else if (dist >= attackRange)
+            else
             {
                 agent.destination = target.position;
-             //   anim.SetBool("Walk", false);
-             //   anim.SetBool("Run", true);
+            
             }
            
-                //agent.destination = transform.position;
-                //Vector3 targetDir = target.position - transform.position;
-                //Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 0.0f);
-                //transform.rotation = Quaternion.LookRotation(newDir);
-                //Shoot();
+               
             
             
 
@@ -103,49 +98,14 @@ public class EnemyHandler : MonoBehaviour
    {
        // Increase Score Value by incoming score
        score += scoretoAdd;
-       // Update UI Here
-       //UIManager.Instance.UpdateScore(score);
+      
    }
    
-    void Fire()
+    public void Fire()
     {
         curHealth -= damage;
 
 
     }
-    /*/private void LateUpdate()
-    {
-        if(curHealth <= 0)
-        {
-            Destroy(this.gameObject, 0.5f);
-        }
-    }
-    void Shoot ()
-    {   if (PlayerHandler.isDead == false)
-        {
-            timeTillNextFire += Time.deltaTime;
-            if (timeTillNextFire >= fireRate)
-            {
-                anim.SetTrigger("Attack");
-                Invoke("Fire", 0.75f);
-                timeTillNextFire = 0;
-            }
-        }
-    }
-    void Fire()
-    {
-        Transform clone = Instantiate(projectilePrefab, launchPoint.position, launchPoint.rotation).GetComponent<Transform>();
-        clone.GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward * 75);
-
-       
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "Sword")
-        {
-            curHealth -= 50;
-        }
-    }
-    /*/
+   
 }
