@@ -1185,6 +1185,7 @@ MonoBehaviour:
   dist: 1
   targetDist: 500
   arclines: {fileID: 0}
+  self: {fileID: 445598084488479700}
   fireRate: 1
   timeTillNextFire: 1
   damage: 5

@@ -96,7 +96,7 @@ MonoBehaviour:
   moveSpeed: 30
   curHealth: 30
   damage: 1
-  spawnPoint: {fileID: 0}
+  spawnPoint: {fileID: 3896549827206799398}
   Loot: 5
   attackRange: 3
   target: {fileID: 0}

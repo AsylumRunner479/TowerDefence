@@ -10,7 +10,7 @@ public class TowerHandler : MonoBehaviour
     public Animator anim;
     public float dist, targetDist = 500;
     public GameObject arclines;
-
+    public GameObject self;
     public float fireRate, timeTillNextFire, damage, range;
     public float turnSpeed;
 
@@ -24,15 +24,16 @@ public class TowerHandler : MonoBehaviour
     }
     void Update()
     {
+        
         if(target == null)
         {
             targetDist = 500;
             foreach (var item in GameObject.FindGameObjectsWithTag("Enemy"))
             {
                 dist = Vector3.Distance(item.transform.position, transform.position);
-                if (dist <= range)
+                if (dist <= range )
                 {
-                    if (dist < targetDist)
+                    if (dist < targetDist )
                     {
                         target = item;
                         targetDist = dist;
@@ -48,13 +49,20 @@ public class TowerHandler : MonoBehaviour
        
         }
         //make the rotation restricted based on target position
-        if (target != null)
+        if (target != null )
         {
-            //   anim.SetBool("IsShooting", true);
-            Vector3 targetDir = target.transform.position - transform.position;
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 0.0f);
-            transform.rotation = Quaternion.LookRotation(newDir);
-            Shoot();
+            if (((target.transform.position.x > self.transform.position.x && target.transform.position.y > self.transform.position.y) || (target.transform.position.x < self.transform.position.x && target.transform.position.y < self.transform.position.y)))
+            {
+                //   anim.SetBool("IsShooting", true);
+                Vector3 targetDir = target.transform.position - transform.position;
+                Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 0.0f);
+                transform.rotation = Quaternion.LookRotation(newDir);
+                Shoot();
+            }
+           else
+            {
+                target = null;
+            }
 
         }
         timeTillNextFire += Time.deltaTime;
