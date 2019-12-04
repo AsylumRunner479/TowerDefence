@@ -12,7 +12,7 @@ public class LinearInventory : MonoBehaviour
     public PlayerHandler player;
     public Vector2 scr;
     public Item selectedItem;
-    public static int money;
+    public static float money;
     public Vector2 scrollPos;
     public Interact interact;
     public Transform dropLocation;
@@ -110,41 +110,41 @@ public class LinearInventory : MonoBehaviour
             DisplayInv();
 
 
-            UseItem();
+            //UseItem();
 
 
         }
-        void UseItem()
-        {
+        //void UseItem()
+        //{
             //displays all the stat and options on what to do with them
-            GUI.Box(new Rect(4f * scr.x, 0.25f * scr.y, 3 * scr.x, 0.25f * scr.y), selectedItem.Name, titleStyle);
-            GUI.skin = invSkin;
-            GUI.Box(new Rect(4f * scr.x, 0.5f * scr.y, 3 * scr.x, 3 * scr.y), selectedItem.IconName);
-            GUI.Box(new Rect(4f * scr.x, 3.5f * scr.y, 3 * scr.x, 3 * scr.y), selectedItem.Description + "\nAmount: " + "\nPrice: $" + selectedItem.Value);
+            //GUI.Box(new Rect(4f * scr.x, 0.25f * scr.y, 3 * scr.x, 0.25f * scr.y), selectedItem.Name, titleStyle);
+            //GUI.skin = invSkin;
+            //GUI.Box(new Rect(4f * scr.x, 0.5f * scr.y, 3 * scr.x, 3 * scr.y), selectedItem.IconName);
+            //GUI.Box(new Rect(4f * scr.x, 3.5f * scr.y, 3 * scr.x, 3 * scr.y), selectedItem.Description + "\nAmount: " + "\nPrice: $" + selectedItem.Value);
 
 
 
 
 
             // this allows the player to throw away items they don't need or want
-            if (GUI.Button(new Rect(5.5f * scr.x, 6.5f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "place"))
-            {
+            //if (GUI.Button(new Rect(5.5f * scr.x, 6.5f * scr.y, 1.5f * scr.x, 0.25f * scr.y), "place"))
+            //{
                 
-                Destroy(Interact.tower);
+                //Destroy(Interact.tower);
                 //spawn item at droplocation
-                GameObject itemToDrop = Instantiate(selectedItem.MeshName, dropLocation.position, Quaternion.identity);
+                //GameObject itemToDrop = Instantiate(selectedItem.MeshName, dropLocation.position, Quaternion.identity);
                 //apply gravity and make sure its named correctly 
-                itemToDrop.name = selectedItem.Name;
-                itemToDrop.AddComponent<Rigidbody>().useGravity = true;
+                //itemToDrop.name = selectedItem.Name;
+                //itemToDrop.AddComponent<Rigidbody>().useGravity = true;
 
 
-                inv.Remove(selectedItem);
-                selectedItem = null;
-                return;
+                //inv.Remove(selectedItem);
+                //selectedItem = null;
+                //return;
 
 
-            }
-        }
+            
+        
     }
    
 }

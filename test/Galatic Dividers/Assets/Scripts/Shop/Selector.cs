@@ -31,7 +31,7 @@ using UnityEngine;
                     hologram.transform.position = p.transform.position;
 
                     // Is left mouse button down?
-                    if (Input.GetMouseButtonDown(0) && LinearInventory.money >= 0)
+                    if (Input.GetMouseButtonDown(0) && Shop.money >= 0)
                     {
                         // Get current tower prefab
                         GameObject towerPrefab = towers[currentTower];
@@ -43,6 +43,7 @@ using UnityEngine;
                         p.isAvailable = false;
 
                     Shop.money -= towerPrice;
+                    
                     }
                 }
             }

@@ -1182,14 +1182,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   anim: {fileID: 0}
-  dist: 0
+  dist: 1
   targetDist: 500
   arclines: {fileID: 0}
-  fireRate: 0
-  timeTillNextFire: 0
-  damage: 0
-  range: 0
-  turnSpeed: 0
+  fireRate: 1
+  timeTillNextFire: 1
+  damage: 5
+  range: 2
+  turnSpeed: 1
 --- !u!1 &445598084488479702
 GameObject:
   m_ObjectHideFlags: 0

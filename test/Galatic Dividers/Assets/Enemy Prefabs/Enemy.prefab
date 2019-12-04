@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  curHealth: 5
-  damage: 5
+  curHealth: 300
+  damage: 1000
   spawnPoint: {fileID: 0}
   Loot: 5
   attackRange: 3
