@@ -1190,7 +1190,7 @@ MonoBehaviour:
   timeTillNextFire: 1
   damage: 5
   range: 4
-  turnSpeed: 1
+  turnSpeed: 10
 --- !u!1 &445598084488479702
 GameObject:
   m_ObjectHideFlags: 0
