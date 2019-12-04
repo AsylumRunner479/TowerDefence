@@ -6,6 +6,7 @@ using System;
 
 public class TankManager : MonoBehaviour
 {
+    public PlayerHandler player;
     public static float waveNumber, spawnTimer, enemySpawnCount;
     public float enemiesKilled;
     public float maxEnemies, enemyCap;
@@ -37,7 +38,7 @@ public class TankManager : MonoBehaviour
         {
             spawnTimer -= Time.deltaTime;
         }
-        if (spawnTimer < 0 && canSpawn && !PlayerHandler.isDead)
+        if (spawnTimer < 0 && canSpawn && !player.isDead)
         {
             if (enemySpawnCount < maxEnemies)
             {
@@ -74,13 +75,12 @@ public class TankManager : MonoBehaviour
             }
         }
     }
-    /*/
-    void EnemyType ()
+    void EnemyType()
     {
 
     }
     // Update is called once per frame
-    
+    public GameObject[] Enemy;
     public Transform spawnPos;
     void SpawnEnemy()
     {
@@ -89,21 +89,24 @@ public class TankManager : MonoBehaviour
 
         transform.position = UnityEngine.Random.insideUnitSphere * spawnRadius;
 
-        Instantiate(spawnObject[spawnObjectIndex]);
+        GameObject clone = Instantiate(spawnObject[spawnObjectIndex]);
+        EnemyHandler enemy = clone.GetComponent<EnemyHandler>();
+        enemy.player = player;
 
         if (enemiesKilled != 0)
         {
             Invoke("SpawnEnemy", UnityEngine.Random.Range(minSpawnTime, maxSpawnTime));
         }
     }
-    /*/
-    public GameObject[] Enemy;
+    
 
     void AddRandom()
     {
         int randomIndex = UnityEngine.Random.Range(0, Enemy.Length);
         GameObject objectToCreate = Enemy[randomIndex];
-        Instantiate(objectToCreate, spawnPoint.transform.position, Quaternion.identity);
+        GameObject clone = Instantiate(objectToCreate, spawnPoint.transform.position, Quaternion.identity);
+        EnemyHandler enemy = clone.GetComponent<EnemyHandler>();
+        enemy.player = player;
 
         enemySpawnCount++;
 

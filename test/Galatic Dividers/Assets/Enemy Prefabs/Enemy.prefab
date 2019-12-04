@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 30
-  curHealth: 300
-  damage: 1000
+  curHealth: 30
+  damage: 1
   spawnPoint: {fileID: 0}
   Loot: 5
   attackRange: 3
@@ -107,6 +107,7 @@ MonoBehaviour:
   turnSpeed: 1
   anim: {fileID: 3896549827206799397}
   shop: {fileID: 0}
+  player: {fileID: 0}
 --- !u!135 &3896549827206799393
 SphereCollider:
   m_ObjectHideFlags: 0

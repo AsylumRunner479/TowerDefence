@@ -31,6 +31,7 @@ public class EnemyHandler : MonoBehaviour
     //public EnemyAI myAI;
     public Animator anim;
     public Shop shop;
+    public PlayerHandler player;
     //public float curHealth, maxHealth;
     void Start()
     {
@@ -41,6 +42,7 @@ public class EnemyHandler : MonoBehaviour
         anim = self.GetComponent<Animator>();
         spawnPoint = GameObject.FindGameObjectWithTag("Spawn").transform;
         agent.speed = moveSpeed;
+        
     }
 
     void Update()
@@ -60,7 +62,7 @@ public class EnemyHandler : MonoBehaviour
 
         }
         //moves the enemy when the player is alive
-        if (PlayerHandler.isDead == false)
+        if (player.isDead == false)
         {
             dist = Vector3.Distance(target.position, transform.position);
 
@@ -73,7 +75,7 @@ public class EnemyHandler : MonoBehaviour
             //attacks the player if they get too close
             else if (dist <= attackRange)
             {
-                PlayerHandler.curHealth -= 10f;
+                player.curHealth -= damage;
                 agent.destination = transform.position;
                 Debug.Log("Attack");
              //   anim.SetTrigger("Bite Attack");

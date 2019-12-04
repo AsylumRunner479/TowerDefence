@@ -19,7 +19,7 @@ public class WaveManager : MonoBehaviour
     public float maxSpawnTime = 10.0f;
     public bool canSpawn;
     public GameObject space;
-
+    public PlayerHandler player;
     // Start is called before the first frame update
     
     void Start()
@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
         {
             spawnTimer -= 10*Time.deltaTime;
         }
-        if (spawnTimer < 0 && canSpawn && !PlayerHandler.isDead)
+        if (spawnTimer < 0 && canSpawn && !player.isDead)
         {
             if (enemySpawnCount < maxEnemies)
             {
@@ -102,7 +102,9 @@ public class WaveManager : MonoBehaviour
 
         transform.position = UnityEngine.Random.insideUnitSphere * spawnRadius;
 
-        Instantiate(spawnObject[spawnObjectIndex]);
+        GameObject clone = Instantiate(spawnObject[spawnObjectIndex]);
+        EnemyHandler enemy = clone.GetComponent<EnemyHandler>();
+        enemy.player = player;
 
         if (enemiesKilled != 0)
         {
@@ -115,7 +117,9 @@ public class WaveManager : MonoBehaviour
     {
         int randomIndex = UnityEngine.Random.Range(0, Enemy.Length);
         GameObject objectToCreate = Enemy[randomIndex];
-        Instantiate(objectToCreate, spawnPoint.transform.position,Quaternion.identity);
+        GameObject clone = Instantiate(objectToCreate, spawnPoint.transform.position,Quaternion.identity);
+        EnemyHandler enemy = clone.GetComponent<EnemyHandler>();
+        enemy.player = player;
 
         enemySpawnCount++;
 

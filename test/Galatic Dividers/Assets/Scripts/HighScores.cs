@@ -3,9 +3,9 @@
 
 public class HighScores
 {
-    [XmlAttribute("Names")]
+    [XmlArray("Names")]
     public string[] playerName = new string[1] {"Blank"};
-    [XmlAttribute("highScore")]
+    [XmlElement("highScore")]
     public float highScore;
 
 }

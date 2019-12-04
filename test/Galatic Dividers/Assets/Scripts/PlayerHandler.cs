@@ -7,8 +7,8 @@ using System.IO;
 
 public class PlayerHandler : MonoBehaviour
 {
-    public static bool isDead;
-    public static float curHealth, maxHealth;
+    public bool isDead;
+    public float curHealth, maxHealth;
     public GameObject death;
     public Menu menu;
     public GameObject healthCanvas;
@@ -24,12 +24,15 @@ public class PlayerHandler : MonoBehaviour
         {
             EnemyHandler.highScore = highScoreData.highScore;
         }
+        else
+        {
+            highScoreData = new HighScores();
+        }
 
-        maxHealth = 1000f;
-        curHealth = maxHealth;
+        
         //healthCanvas = GameObject.FindGameObjectWithTag(healthCanvas);
         healthBar = GameObject.FindGameObjectWithTag("healthBar").GetComponent<Image>();
-        PlayerHandler.isDead = false;
+        isDead = false;
         death.SetActive(false);
     }
 
@@ -40,14 +43,14 @@ public class PlayerHandler : MonoBehaviour
         {
             healthBar.fillAmount = (curHealth/maxHealth);
         }
-        else if (curHealth <= 0)
+        if (curHealth <= 0)
         {
-            PlayerHandler.isDead = true;
+            isDead = true;
            death.SetActive(true);
            
 
         }
-        if (PlayerHandler.isDead = true && Input.GetKeyDown(KeyCode.R))
+        if (isDead = true && Input.GetKeyDown(KeyCode.R))
         {
             highScoreData.highScore = EnemyHandler.highScore;
 
@@ -65,11 +68,11 @@ public class PlayerHandler : MonoBehaviour
             SceneManager.LoadScene(activeScene.buildIndex);
         }
 
-        if (healthBar.fillAmount < 1 && healthBar.fillAmount > 0)
-        {
+        //if (healthBar.fillAmount < 1 && healthBar.fillAmount > 0)
+        //{
 
-            healthCanvas.transform.LookAt(Camera.main.transform);
-            healthCanvas.transform.Rotate(0, 180, 0);
-        }
+           // healthCanvas.transform.LookAt(Camera.main.transform);
+          //  healthCanvas.transform.Rotate(0, 180, 0);
+        //}
     }
 }
