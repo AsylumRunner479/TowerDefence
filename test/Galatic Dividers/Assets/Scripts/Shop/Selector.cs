@@ -24,17 +24,17 @@ using UnityEngine;
                 if (p && p.isAvailable)
                 {
                     // Get current hologram (tower)
-                    GameObject hologram = holograms[currentTower];
+                    GameObject hologram = holograms[0];
                     // Activate hologram
                     hologram.SetActive(true);
                     // Position hologram
                     hologram.transform.position = p.transform.position;
 
                     // Is left mouse button down?
-                    if (Input.GetMouseButtonDown(0) && Shop.money >= 0)
+                    if (Input.GetMouseButtonDown(0) && Shop.money >= towerPrice)
                     {
                         // Get current tower prefab
-                        GameObject towerPrefab = towers[currentTower];
+                        GameObject towerPrefab = towers[0];
 
                         // Spawn tower there
                         Instantiate(towerPrefab, p.GetPivotPoint(), p.transform.rotation, transform);
@@ -45,7 +45,21 @@ using UnityEngine;
                     Shop.money -= towerPrice;
                     
                     }
+                if (Input.GetMouseButtonDown(1) && Shop.money >= towerPrice)
+                {
+                    // Get current tower prefab
+                    GameObject towerPrefab = towers[1];
+
+                    // Spawn tower there
+                    Instantiate(towerPrefab, p.GetPivotPoint(), p.transform.rotation, transform);
+
+                    // Spot is no longer available
+                    p.isAvailable = false;
+
+                    Shop.money -= towerPrice;
+
                 }
+            }
             }
         }
 

@@ -34,6 +34,7 @@ public class EnemyHandler : MonoBehaviour
     //public float curHealth, maxHealth;
     void Start()
     {
+        XMIManager.ReadData();
         //sets the conditions at the start
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = self.GetComponent<NavMeshAgent>();

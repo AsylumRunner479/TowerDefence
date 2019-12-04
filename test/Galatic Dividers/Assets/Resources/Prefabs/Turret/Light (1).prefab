@@ -1188,7 +1188,7 @@ MonoBehaviour:
   fireRate: 1
   timeTillNextFire: 1
   damage: 5
-  range: 2
+  range: 4
   turnSpeed: 1
 --- !u!1 &445598084488479702
 GameObject:

@@ -9,7 +9,7 @@ public class PlayerHandler : MonoBehaviour
     public static bool isDead;
     public static float curHealth, maxHealth;
     public GameObject death;
-   
+    public Menu menu;
     public GameObject healthCanvas;
     public Image healthBar;
 
@@ -32,15 +32,22 @@ public class PlayerHandler : MonoBehaviour
         {
             healthBar.fillAmount = (curHealth/maxHealth);
         }
-        else if (curHealth == 0)
+        else if (curHealth <= 0)
         {
             PlayerHandler.isDead = true;
            death.SetActive(true);
            
 
         }
+        if (PlayerHandler.isDead = true && Input.GetKeyDown(KeyCode.R))
+        {
+            WriteData(HighScores data);
+            EnemyHandler.score = 0;
+            menu.ChangeScene(1);
+        }
         if (!Input.GetKeyDown(KeyCode.R))
         {
+
         }
         else
         {

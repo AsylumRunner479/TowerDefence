@@ -4,8 +4,8 @@
 public class HighScores
 {
     [XmlAttribute("Names")]
-    public string[] playerName = new string[10] { "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank", "Blank"};
+    public string[] playerName = new string[1] {"Blank"};
     [XmlAttribute("highScore")]
-    public int[] highScore = new int[10] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+    public int[] highScore = new int[1] {0};
 
 }
