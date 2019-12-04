@@ -45,20 +45,20 @@ using UnityEngine;
                     Shop.money -= towerPrice;
                     
                     }
-                if (Input.GetMouseButtonDown(1) && Shop.money >= towerPrice)
-                {
+                //if (Input.GetMouseButtonDown(1) && Shop.money >= towerPrice)
+                //{
                     // Get current tower prefab
-                    GameObject towerPrefab = towers[1];
+                   // GameObject towerPrefab = towers[1];
 
                     // Spawn tower there
-                    Instantiate(towerPrefab, p.GetPivotPoint(), p.transform.rotation, transform);
+                    //Instantiate(towerPrefab, p.GetPivotPoint(), p.transform.rotation, transform);
 
                     // Spot is no longer available
-                    p.isAvailable = false;
+                    //p.isAvailable = false;
 
-                    Shop.money -= towerPrice;
+                   // Shop.money -= towerPrice;
 
-                }
+                //}
             }
             }
         }

@@ -5252,7 +5252,7 @@ MonoBehaviour:
   canSpawn: 0
   Enemy:
   - {fileID: 3896549827206799394, guid: 726b7afccfca33043acc5801dceedaa1, type: 3}
-  spawnPos: {fileID: 0}
+  spawnPos: {fileID: 524235684}
 --- !u!4 &324867147
 Transform:
   m_ObjectHideFlags: 0
@@ -6058,7 +6058,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358739423}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0.51937866, y: 14.78, z: -14.81}
+  m_LocalPosition: {x: 0.51937866, y: 18.21, z: -18.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 154559724}
@@ -6097,7 +6097,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 14
   m_Depth: -1
   m_CullingMask:
@@ -22938,7 +22938,7 @@ MonoBehaviour:
   radius: 1
   minSpawnTime: 1
   maxSpawnTime: 10
-  canSpawn: 1
+  canSpawn: 0
   space: {fileID: 2086125986}
   player: {fileID: 62902516}
   Enemy:
