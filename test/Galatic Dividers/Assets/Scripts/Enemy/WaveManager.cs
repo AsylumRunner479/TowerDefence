@@ -32,6 +32,7 @@ public class WaveManager : MonoBehaviour
         enemySpawnCount = 0;
         frequency = 1;
         magnitude = 1;
+        canSpawn = false;
     }
 
     
