@@ -1236,8 +1236,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: {fileID: 34698102}
+  menu: {fileID: 344821308}
   healthCanvas: {fileID: 2040223759}
   healthBar: {fileID: 197113607}
+  highScoreData:
+    playerName:
+    - Blank
+    highScore: 0
   self: {fileID: 62902510}
 --- !u!1001 &63744294
 PrefabInstance:
@@ -5425,6 +5430,7 @@ GameObject:
   - component: {fileID: 344821304}
   - component: {fileID: 344821303}
   - component: {fileID: 344821307}
+  - component: {fileID: 344821308}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5528,6 +5534,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenu: {fileID: 882508842}
+--- !u!114 &344821308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344821302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 039648cbe7e36814e841526117fd7ac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &345910166
 GameObject:
   m_ObjectHideFlags: 0

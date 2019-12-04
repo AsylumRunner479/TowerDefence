@@ -8,9 +8,9 @@ using System.IO;
 
 public static class XMIManager
 {
+    public static string path = Application.persistentDataPath + "/" + "High.xml";
     public static HighScores ReadData()
     {
-        string path = Application.persistentDataPath + "/" + "High.sav";
         if (File.Exists(path))
         {
             var serializer = new XmlSerializer(typeof(HighScores));
@@ -27,7 +27,6 @@ public static class XMIManager
     public static void WriteData(HighScores data)
     {
         var serializer = new XmlSerializer(typeof(HighScores));
-        string path = Application.persistentDataPath + "/" + "High.sav";
         var stream = new FileStream(path, FileMode.Create);
         serializer.Serialize(stream, data);
         stream.Close();

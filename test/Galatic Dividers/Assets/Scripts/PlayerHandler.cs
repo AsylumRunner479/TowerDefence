@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class PlayerHandler : MonoBehaviour
 {
@@ -12,11 +13,18 @@ public class PlayerHandler : MonoBehaviour
     public Menu menu;
     public GameObject healthCanvas;
     public Image healthBar;
-
+    public HighScores highScoreData = new HighScores();
+    
     public GameObject self;
     // Start is called before the first frame update
     void Start()
     {
+        highScoreData = XMIManager.ReadData();
+        if (highScoreData != null)
+        {
+            EnemyHandler.highScore = highScoreData.highScore;
+        }
+
         maxHealth = 1000f;
         curHealth = maxHealth;
         //healthCanvas = GameObject.FindGameObjectWithTag(healthCanvas);
@@ -41,7 +49,9 @@ public class PlayerHandler : MonoBehaviour
         }
         if (PlayerHandler.isDead = true && Input.GetKeyDown(KeyCode.R))
         {
-            WriteData(HighScores data);
+            highScoreData.highScore = EnemyHandler.highScore;
+
+            XMIManager.WriteData(highScoreData);
             EnemyHandler.score = 0;
             menu.ChangeScene(1);
         }
