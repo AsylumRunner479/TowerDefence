@@ -32,9 +32,15 @@ public class EnemyHandler : MonoBehaviour
     public Animator anim;
     public Shop shop;
     public PlayerHandler player;
+    public static bool killPlayer;
     //public float curHealth, maxHealth;
+    private void Awake()
+    {
+        killPlayer = false;
+    }
     void Start()
     {
+        
         //sets the conditions at the start
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = self.GetComponent<NavMeshAgent>();
@@ -75,6 +81,7 @@ public class EnemyHandler : MonoBehaviour
             //attacks the player if they get too close
             else if (dist <= attackRange)
             {
+                //killPlayer = true;
                 player.curHealth -= damage;
                 agent.destination = transform.position;
                 Debug.Log("Attack");

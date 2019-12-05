@@ -34,8 +34,9 @@ public class PlayerHandler : MonoBehaviour
         healthBar = GameObject.FindGameObjectWithTag("healthBar").GetComponent<Image>();
         isDead = false;
         death.SetActive(false);
+        curHealth = 2900;
     }
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -54,13 +55,16 @@ public class PlayerHandler : MonoBehaviour
         {
             isDead = false;
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || isDead)
         {
+
+            EnemyHandler.killPlayer = false;
             highScoreData.highScore = EnemyHandler.highScore;
 
             XMIManager.WriteData(highScoreData);
             EnemyHandler.score = 0;
             menu.ChangeScene(1);
+            
         }
         if (!Input.GetKeyDown(KeyCode.R))
         {
