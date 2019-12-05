@@ -13,7 +13,7 @@ public class TowerHandler : MonoBehaviour
     public GameObject self;
     public float fireRate, timeTillNextFire, damage, range;
     public float turnSpeed;
-
+    // set floats for the values in the code
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class TowerHandler : MonoBehaviour
     }
     void Update()
     {
-        
+        //when there isn't a target get an object with the tag Enemy
         if(target == null)
         {
             targetDist = 500;
@@ -49,20 +49,21 @@ public class TowerHandler : MonoBehaviour
        
         }
         //make the rotation restricted based on target position
-        if (target != null )
+        if (target != null && timeTillNextFire <= 0)
         {
-            if (((target.transform.position.x > self.transform.position.x && target.transform.position.y > self.transform.position.y) || (target.transform.position.x < self.transform.position.x && target.transform.position.y < self.transform.position.y)))
-            {
+            //if there is a taget rotate then shoot at it
+            //if (((target.transform.position.x > self.transform.position.x && target.transform.position.y > self.transform.position.y) || (target.transform.position.x < self.transform.position.x && target.transform.position.y < self.transform.position.y)))
+            //{
                 //   anim.SetBool("IsShooting", true);
                 Vector3 targetDir = target.transform.position - transform.position;
                 Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, turnSpeed * Time.deltaTime, 0.0f);
                 transform.rotation = Quaternion.LookRotation(newDir);
                 Shoot();
-            }
-           else
-            {
-                target = null;
-            }
+            //}
+           //else
+            //{
+                //target = null;
+            //}
 
         }
         timeTillNextFire += Time.deltaTime;
@@ -75,6 +76,7 @@ public class TowerHandler : MonoBehaviour
 
     void Shoot()
     {
+        //shoot activates function to damage enemy
         target.GetComponent<EnemyHandler>().Invoke("Fire", 0.75f);
 
         
