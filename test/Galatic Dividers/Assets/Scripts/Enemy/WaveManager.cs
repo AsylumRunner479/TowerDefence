@@ -39,7 +39,7 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !player.isDead)
         {
             if(!canSpawn)
             canSpawn = true;

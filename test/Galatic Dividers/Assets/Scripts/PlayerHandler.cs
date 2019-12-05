@@ -50,7 +50,11 @@ public class PlayerHandler : MonoBehaviour
            
 
         }
-        if (isDead = true && Input.GetKeyDown(KeyCode.R))
+        else if (curHealth >= 0)
+        {
+            isDead = false;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
         {
             highScoreData.highScore = EnemyHandler.highScore;
 
